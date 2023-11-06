@@ -12,10 +12,14 @@ module.exports = {
         primary: "#429690",
         primaryDark: "#265956",
         dark: "#2d2f31",
+        BGgray: "#f1f1f1",
         btn: {
           background: "hsl(var(--btn-background))",
           "background-hover": "hsl(var(--btn-background-hover))",
         },
+      },
+      screens: {
+        mobile: "0px",
       },
     },
   },

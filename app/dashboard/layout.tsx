@@ -39,7 +39,7 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
         <div>
           <div className="mb-3 flex justify-between text-white">
             <div className="flex gap-10 items-center">
-              <h1 className="font-bold text-white font-serif text-lg">
+              <h1 className="font-bold text-white font-serif text-lg mobile:max-sm:hidden">
                 Xpence<span className="text-gray-500">Dairy</span>
               </h1>
               <p>Monday 16/11/2023</p>
@@ -50,7 +50,7 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
           <div className="flex gap-5">
-            <div className="bg-white relative h-[90vh] w-[10vw] p-2">
+            <div className="bg-white relative h-[90vh] w-[10vw] p-2 mobile:max-md:hidden">
               <div className="flex flex-col items-center gap-5">
                 {links.map((link, index) => (
                   <Link
@@ -69,6 +69,14 @@ function DashboardLayout({ children }: { children: React.ReactNode }) {
             <div className="w-full">{children}</div>
           </div>
         </div>
+      </div>
+      <div className="flex justify-between bg-white fixed bottom-0 w-full md:hidden p-5">
+        {links.map((link, index) => (
+          <Link href={link.path} className="text-dark font-[50px]" key={index}>
+            {link.icon}
+            {/* {link.name} */}
+          </Link>
+        ))}
       </div>
     </div>
   );
